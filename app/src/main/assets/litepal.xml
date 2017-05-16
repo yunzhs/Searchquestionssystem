@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value="Questionsdata" ></dbname>
+
+    <version value="5" ></version>
+
+    <list>
+        <mapping class="com.example.searchquestionssystem.inventory"></mapping>
+        <mapping class="com.example.searchquestionssystem.student"></mapping>
+    </list>
+</litepal>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="type">
+        <item>数学</item>
+        <item>物理</item>
+        <item>英语</item>
+        <item>化学</item>
+        <item>语文</item>
+    </string-array>
+</resources>

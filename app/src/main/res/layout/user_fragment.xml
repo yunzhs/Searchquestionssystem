@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_light_background">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="188dp"
+        android:background="@color/colorPrimary">
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:srcCompat="@drawable/step2"
+            android:background="@drawable/shape_gray_square_bg"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp" />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_alignEnd="@+id/imageView2"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/imageView2"
+            android:layout_marginBottom="12dp"
+            android:text="云中手"
+            android:textSize="18dp"
+            android:gravity="center"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:weightSum="1">
+        <RelativeLayout
+            style="@style/FindBottomStyle"
+            android:layout_weight="0.06"
+            android:background="@drawable/shape_corner">
+
+
+            <TextView
+                android:id="@+id/textView_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:gravity="center_vertical"
+                android:text="系统消息"
+                android:textSize="20dp" />
+
+
+            <ImageButton
+                android:id="@+id/imageButton_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="?android:attr/homeAsUpIndicator"
+                android:layout_marginRight="18dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="#93ccef"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/FindBottomStyle"
+            android:layout_weight="0.06"
+            android:background="@drawable/shape_corner">
+
+
+            <TextView
+                android:id="@+id/textView_que"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:gravity="center_vertical"
+                android:text="我的提问"
+                android:textSize="20dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton_que"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="?android:attr/homeAsUpIndicator"
+                android:layout_marginRight="18dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="#93ccef"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/FindBottomStyle"
+            android:layout_weight="0.06"
+            android:background="@drawable/shape_corner">
+
+
+            <TextView
+                android:id="@+id/textView_ans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:gravity="center_vertical"
+                android:text="我的回答"
+                android:textSize="20dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton_ans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="?android:attr/homeAsUpIndicator"
+                android:layout_marginRight="18dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="#93ccef"/>
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            style="@style/FindBottomStyle"
+            android:layout_weight="0.06"
+            android:background="@drawable/shape_corner">
+
+
+            <TextView
+                android:id="@+id/textView_set"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:gravity="center_vertical"
+                android:text="系统设置"
+                android:textSize="20dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton_set"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="?android:attr/homeAsUpIndicator"
+                android:layout_marginRight="18dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="#93ccef"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
