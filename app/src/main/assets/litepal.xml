@@ -2,10 +2,12 @@
 <litepal>
     <dbname value="Questionsdata" ></dbname>
 
-    <version value="5" ></version>
+    <version value="8" ></version>
 
     <list>
-        <mapping class="com.example.searchquestionssystem.inventory"></mapping>
-        <mapping class="com.example.searchquestionssystem.student"></mapping>
+        <mapping class="com.example.searchquestionssystem.db.inventory"></mapping>
+        <mapping class="com.example.searchquestionssystem.db.student"></mapping>
+        <mapping class="com.example.searchquestionssystem.db.keyword"></mapping>
+
     </list>
 </litepal>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:id="@+id/bing_pic_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                android:orientation="vertical"
+                android:weightSum="1">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize">
+
+                    <Button
+                        android:id="@+id/button_home3"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/ic_home" />
+
+                    <TextView
+                        android:id="@+id/title_que"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="用户信息  "
+                        android:textColor="#fff"
+                        android:textSize="20sp" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    style="@style/FindBottomStyle"
+                    android:layout_weight="0.02"
+                    android:background="@drawable/shape_corner">
+
+
+                    <TextView
+                        android:id="@+id/textView_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center_vertical"
+                        android:text="我的积分："
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/inte"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginEnd="28dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center_vertical"
+                        android:textSize="20dp" />
+
+
+                </RelativeLayout>
+                <RelativeLayout
+                    style="@style/FindBottomStyle"
+                    android:layout_weight="0.02"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_corner">
+
+                    <TextView
+                        android:id="@+id/t1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginLeft="130dp"
+                        android:gravity="center"
+                        android:text=" 积分排行榜"
+                        android:textSize="20dp" />" />
+
+
+                    <ListView
+                    android:id="@+id/name"
+                    android:layout_marginTop="50dp"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"></ListView>
+                    <ListView
+                        android:id="@+id/point"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/name"
+                        android:layout_alignParentEnd="true"></ListView>
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+
+    </android.support.v4.widget.DrawerLayout>
+
+</FrameLayout>
+

@@ -5,15 +5,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.litepal.LitePal;
-import org.litepal.crud.DataSupport;
-
-import java.util.List;
+import com.example.searchquestionssystem.mainfragment.AnsFragment;
+import com.example.searchquestionssystem.mainfragment.NansFragment;
+import com.example.searchquestionssystem.mainfragment.QueFragment;
+import com.example.searchquestionssystem.mainfragment.SearFragment;
+import com.example.searchquestionssystem.mainfragment.UserFragment;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private TextView topBar;
@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         //LitePal.getDatabase();
         UserId = getIntent().getStringExtra("UserId");
+        //Toast.makeText(MainActivity.this, UserId, Toast.LENGTH_SHORT).show();
         bindView();
     }
 
@@ -102,6 +103,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 tabSre.setSelected(true);
                 if(f1==null){
                     f1 = new SearFragment();
+                    Bundle bundle1 = new Bundle();
+                    bundle1.putString("id", UserId);
+                    f1.setArguments(bundle1);
                     transaction.add(R.id.fragment_container,f1);
                 }else{
                     transaction.show(f1);
@@ -113,6 +117,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 tabQue.setSelected(true);
                 if(f2==null){
                     f2 = new QueFragment();
+                    Bundle bundle1 = new Bundle();
+                    bundle1.putString("id", UserId);
+                    f2.setArguments(bundle1);
                     transaction.add(R.id.fragment_container,f2);
                 }else{
                     transaction.show(f2);
@@ -124,6 +131,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 tabNan.setSelected(true);
                 if(f5==null){
                     f5 = new NansFragment();
+                    Bundle bundle1 = new Bundle();
+                    bundle1.putString("id", UserId);
+                    f5.setArguments(bundle1);
                     transaction.add(R.id.fragment_container,f5);
                 }else{
                     transaction.show(f5);
@@ -135,6 +145,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 tabAns.setSelected(true);
                 if(f3==null){
                     f3 = new AnsFragment();
+                    Bundle bundle1 = new Bundle();
+                    bundle1.putString("id", UserId);
+                    f3.setArguments(bundle1);
                     transaction.add(R.id.fragment_container,f3);
                 }else{
                     transaction.show(f3);

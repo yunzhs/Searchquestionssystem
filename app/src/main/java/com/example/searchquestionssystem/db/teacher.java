@@ -1,21 +1,19 @@
-package com.example.searchquestionssystem;
-
-import org.litepal.crud.DataSupport;
+package com.example.searchquestionssystem.db;
 
 /**
  * Created by hasee on 2017/4/27.
  */
 
-public class student extends DataSupport {
+public class teacher {
     int id;
-    String iden;//身份
-    String account;//账号
-    String password;//密码
+    String iden;
+    String account;
+    String password;
     String name;
-    String grade;//年级
-    String queid;//问题id
-    String ansid;//回答id
-    int points;
+    String queid;
+    String ansid;
+    String points;
+    String Stren;
 
     public int getId() {
         return id;
@@ -49,14 +47,6 @@ public class student extends DataSupport {
         this.name = name;
     }
 
-    public String getGrade() {
-        return grade;
-    }
-
-    public void setGrade(String grade) {
-        this.grade = grade;
-    }
-
     public String getQueid() {
         return queid;
     }
@@ -73,16 +63,19 @@ public class student extends DataSupport {
         this.ansid = ansid;
     }
 
-
-    public String getIden() {
-        return iden;
+    public String getPoints() {
+        return points;
     }
 
-    public void setIden(String iden) {
-        this.iden = iden;
-    }
-
-    public void setPoints(int points) {
+    public void setPoints(String points) {
         this.points = points;
+    }
+
+    public String getStren() {
+        return Stren;
+    }
+
+    public void setStren(String stren) {
+        Stren = stren;
     }
 }

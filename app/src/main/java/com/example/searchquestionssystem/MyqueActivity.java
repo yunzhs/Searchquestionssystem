@@ -12,11 +12,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.example.searchquestionssystem.db.inventory;
+import com.example.searchquestionssystem.db.student;
+
+import org.litepal.crud.DataSupport;
+
+import java.util.List;
+
 public class MyqueActivity extends AppCompatActivity {
 
     private inventory inven;
     private String t;
+    private String UserId;
+    private List<student> stulist;
     Spinner spinner;
+    EditText point;
     EditText edtitlel,edcontent;
     Button back_btn,submit_btn;
 
@@ -28,11 +38,16 @@ public class MyqueActivity extends AppCompatActivity {
         back_btn=(Button) findViewById(R.id.button_home);
         submit_btn=(Button) findViewById(R.id.submit);
         spinner = (Spinner) findViewById(R.id.spinner);
+        point=(EditText)findViewById(R.id.edit_point);
+        point.setText("1");
+        UserId=getIntent().getStringExtra("UserId");
+
 
         back_btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MyqueActivity.this,MainActivity.class);
+                intent.putExtra("UserId",UserId);
                 startActivity(intent);
             }
         });
@@ -40,6 +55,7 @@ public class MyqueActivity extends AppCompatActivity {
         submit_btn.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v) {
+                final int b = Integer.valueOf(point.getText().toString()).intValue();
                 if(edtitlel.getText().toString().length()==0) {
                     new AlertDialog.Builder(v.getContext())
                             .setTitle("警告")
@@ -47,17 +63,31 @@ public class MyqueActivity extends AppCompatActivity {
                             .setPositiveButton("确定", null)
                             .show();
                 }
-                else {
+                if(b>5){
+                    new AlertDialog.Builder(v.getContext())
+                            .setTitle("警告")
+                            .setMessage("悬赏分不能超过五分")
+                            .setPositiveButton("确定", null)
+                            .show();
+                }
+                else{
                     new  AlertDialog.Builder(v.getContext())
                         .setTitle("确认" )
                         .setMessage("确定吗？")
                         .setPositiveButton("是" , new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
+                                stulist = DataSupport.where("id = ? ",UserId).find(student.class);
+                                for (student stu : stulist) {
+                                    stu.setPoints(stu.getPoints()-b);
+                                    stu.save();
+                                }
                                 inven=new inventory();
                                 inven.setTitlename(edtitlel.getText().toString());
                                 inven.setContent(edcontent.getText().toString());
+                                inven.setPoint(point.getText().toString());
                                 inven.setType(t);
+                                inven.setUseid(UserId);
                                 inven.setFinished("false");
                                 inven.save();
                                 new AlertDialog.Builder(MyqueActivity.this)

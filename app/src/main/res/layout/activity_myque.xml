@@ -5,12 +5,6 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary">
 
-    <ImageView
-        android:id="@+id/bing_pic_img"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop" />
-
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
@@ -87,9 +81,9 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginLeft="90dp"
+                            android:layout_weight="0.17"
                             android:entries="@array/type"
-                            android:textColor="#fff"
-                            android:layout_weight="0.17" />
+                            />
 
 
                     </LinearLayout>
@@ -100,6 +94,12 @@
                         android:layout_margin="15dp"
                         android:background="#8000"
                         android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/bing_pic_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -112,7 +112,7 @@
 
                         <EditText
                             android:id="@+id/edit_title"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textColor="#fff" />
 
@@ -139,20 +139,74 @@
                             android:id="@+id/edit_content"
                             android:layout_width="match_parent"
                             android:layout_height="200dp"
-                            android:textColor="#fff"
-                            android:gravity="top"/>
+                            android:background="@null"
+                            android:gravity="top"
+                            android:textColor="#fff" />
 
 
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/submit"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="提交"
-                        android:textSize="18dp" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
+                        <RelativeLayout
+                            android:id="@+id/relativeLayout"
+                            style="@style/FindBottomStyle"
+                            android:layout_width="150dp"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/shape_corner">
+
+                            <TextView
+                                android:id="@+id/textView4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="请输入悬赏分:"
+                                android:gravity="center"
+                                android:textSize="20dp"
+                                android:layout_centerVertical="true"
+                                android:layout_centerHorizontal="true" />
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            style="@style/FindBottomStyle"
+                            android:layout_width="50dp"
+                            android:background="@drawable/shape_corner"
+                            android:layout_alignTop="@+id/submit"
+                            android:layout_toEndOf="@+id/relativeLayout"
+                            android:id="@+id/relativeLayout2">
+
+
+
+                        </RelativeLayout>
+                        <EditText
+                            android:id="@+id/edit_point"
+                            android:layout_width="30dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:textColor="#161010"
+                            android:inputType="number"
+                            android:background="@null"
+                            android:textSize="20dp"
+                            android:layout_alignBottom="@+id/submit"
+                            android:layout_alignStart="@+id/relativeLayout2"
+                            android:layout_alignEnd="@+id/relativeLayout2"
+                            android:layout_alignTop="@+id/relativeLayout2" />
+
+
+                        <Button
+                            android:id="@+id/submit"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="提交"
+                            android:textSize="18dp"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="13dp" />
+                    </RelativeLayout>
                 </LinearLayout>
 
             </ScrollView>

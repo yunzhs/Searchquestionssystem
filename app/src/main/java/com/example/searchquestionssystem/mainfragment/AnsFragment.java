@@ -1,22 +1,21 @@
-package com.example.searchquestionssystem;
+package com.example.searchquestionssystem.mainfragment;
 
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+
+import com.example.searchquestionssystem.MainActivity;
+import com.example.searchquestionssystem.QuesActivity;
+import com.example.searchquestionssystem.R;
+import com.example.searchquestionssystem.db.inventory;
 
 import org.litepal.crud.DataSupport;
 
@@ -33,6 +32,7 @@ public class AnsFragment extends Fragment{
     private ArrayAdapter<String> adapter;
     private Button backButton;
     private inventory selectedQue;
+    private  String t;
     private List<String> dataList = new ArrayList<>();
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -43,6 +43,8 @@ public class AnsFragment extends Fragment{
         test.setText(T);
         test.setTextSize(18);*/
         listView = (ListView) view.findViewById(R.id.list_view);
+        Bundle bundle1 = getArguments();
+        t=bundle1.getString("id");
         /*backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +72,7 @@ public class AnsFragment extends Fragment{
                 if (getActivity() instanceof MainActivity) {
                     Intent intent = new Intent(getActivity(), QuesActivity.class);
                     intent.putExtra("queName", quename);
+                    intent.putExtra("UserId", t);
                     startActivity(intent);
                     getActivity().finish();
                 }

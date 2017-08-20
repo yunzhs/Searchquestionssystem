@@ -13,12 +13,14 @@
         android:orientation="horizontal"
         android:paddingRight="16dp">
 
-        <ImageView
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_gravity="center_vertical"
-            android:padding="10dp"
-            android:src="@drawable/back" />
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:entries="@array/findtype"
+            android:textColor="#ffffff"
+            android:layout_weight="0.17" />
 
         <EditText
             android:id="@+id/et_search"

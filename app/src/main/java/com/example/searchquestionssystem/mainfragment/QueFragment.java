@@ -1,4 +1,4 @@
-package com.example.searchquestionssystem;
+package com.example.searchquestionssystem.mainfragment;
 
 import android.app.Fragment;
 import android.content.Intent;
@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.searchquestionssystem.MyqueActivity;
+import com.example.searchquestionssystem.R;
 
 import java.sql.Date;
 import java.sql.Time;
@@ -25,10 +28,13 @@ public class QueFragment extends Fragment{
         SimpleDateFormat formatter    =new SimpleDateFormat("yyyy年MM月dd日    HH:mm:ss ");
         Date curDate    =   new    Date(System.currentTimeMillis());//获取当前时间
         String str = formatter.format(curDate);
+        Bundle bundle1 = getArguments();
+        final String t=bundle1.getString("id");
         Button button=(Button)view.findViewById(R.id.myque) ;
         button.setOnClickListener(new View.OnClickListener(){
             public void  onClick(View v){
                 Intent intent = new Intent(getActivity(), MyqueActivity.class);
+                intent.putExtra("UserId", t);
                 startActivity(intent);
             }
         });

@@ -9,7 +9,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import com.example.searchquestionssystem.db.aboutdata;
+import com.example.searchquestionssystem.db.inventory;
+import com.example.searchquestionssystem.db.student;
 
 import org.litepal.LitePal;
 import org.litepal.crud.DataSupport;
@@ -35,16 +38,20 @@ public class LoginActivity extends AppCompatActivity {
         password=(EditText) findViewById(R.id.password);
         btnlogin=(Button)findViewById(R.id.bt_go);
         LitePal.getDatabase();
-        /*quelist= DataSupport.where("answer is not null").find(inventory.class);
-        for (inventory inven : quelist) {
+        //account.setText("admin");
+        //password.setText("000");
+        //quelist= DataSupport.where("titlename= ?","鸡和蛋哪个先有？").find(inventory.class);
+        /*for (inventory inven : quelist) {
             inven.setFinished("true");
             inven.save();
         }*/
-        //DataSupport.deleteAll(inventory.class, "finished = ?","false");
+        //DataSupport.deleteAll(inventory.class, "titlename = ?","椭圆定义，性质是什么？");
         //DataSupport.deleteAll(student.class);
         //db=new aboutdata();
-        //db.add_data();
+        ////db.add_data();
         //db.add_data1();
+        //db.add_data2();
+        // 数据库初始化调试
 
 
         btnlogin.setOnClickListener(new View.OnClickListener(){

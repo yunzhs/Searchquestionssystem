@@ -20,7 +20,15 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".QuesActivity" />
         <activity android:name=".MyqueActivity" />
-        <activity android:name=".SloveActivity"></activity>
+        <activity android:name=".SloveActivity" />
+        <activity android:name=".user_activity.MyProActivity" />
+        <activity android:name=".user_activity.display_myque" />
+        <activity android:name=".user_activity.DisplayqueActivity" />
+        <activity android:name=".user_activity.DisqueActivity" />
+        <activity android:name=".user_activity.DisansActivity" />
+        <activity android:name=".user_activity.MyansActivity" />
+        <activity android:name=".user_activity.RankActivity" />
+        <activity android:name=".user_activity.InfoActivity"></activity>
     </application>
 
 </manifest>
